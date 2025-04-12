@@ -14,6 +14,7 @@ const uniqId = require("uniqid");
 const session = require("express-session");
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 4000
 
 app.set("view engine", "ejs");
 app.use(bp.urlencoded({ extended: true }));
@@ -563,6 +564,6 @@ app.get("/logout", (req, res) => {
   res.render("intro");
 });
 
-app.listen(5000, () => {
-  console.log("Server running at http://localhost:5000");
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 });
